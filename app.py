@@ -61,7 +61,7 @@ def line_plot(xval, yval, separate, group, hover, col, row):
 
 def create_statistics(var, var_value, stat_by, args):
     data_filter = df[df[var] == var_value]
-    print(args)
+    # print(args)
     stat = pd.DataFrame(data_filter.agg(
         **args)).reset_index().rename(columns={'index': 'stat', stat_by: var_value})
     return stat
@@ -180,10 +180,10 @@ def main():
         if stat_label != '':
             label_list = stat_label.replace(' ', '').split(',')
             stat = list(zip(label_list, stat_func))
-            print(stat)
+            # print(stat)
         else:
             stat = list(zip(stat_func, stat_func))
-            print("stat",stat)
+            # print("stat",stat)
 
         args = {}
         if stat != [(None, None)]:
